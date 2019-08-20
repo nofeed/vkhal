@@ -1,6 +1,6 @@
 # Vkhal
 
-Utility to help integrate the amazing [Mutt]*[1]/[NeoMutt][2] with the beautiful calendaring application [Khal][3] 
+Utility to help integrate the amazing [Mutt][1]/[NeoMutt][2] with the beautiful calendaring application [Khal][3] 
 
 ## Installation
 
@@ -8,7 +8,17 @@ Utility to help integrate the amazing [Mutt]*[1]/[NeoMutt][2] with the beautiful
 
 ## Usage
 
-TODO: Write usage instructions here
+
+text/calendar;      ~/Projects/vkhal/bin/vkhal -s %s; copiousoutput
+application/ics;    ~/Projects/vkhal/bin/vkhal -s %s; copiousoutput
+
+
+    "\
+<enter-command>unset wait_key<enter>\
+<shell-escape>rm -f /tmp/events.ics<enter>\
+<save-entry><kill-line>/tmp/events.ics<enter>\
+<shell-escape> ~/Projects/vkhal/bin/vkhal -k /tmp/events.ics<enter>\
+"
 
 ## License
 
