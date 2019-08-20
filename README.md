@@ -8,17 +8,26 @@ Utility to help integrate the amazing [Mutt][1]/[NeoMutt][2] with the beautiful 
 
 ## Usage
 
+Vkhal can both display an `ics` file in Mutt and import it in Khal.
 
-text/calendar;      ~/Projects/vkhal/bin/vkhal -s %s; copiousoutput
-application/ics;    ~/Projects/vkhal/bin/vkhal -s %s; copiousoutput
+In order to display the events inside your emails add these two lines in your `mailcap`
 
+```
+text/calendar;      vkhal -s %s; copiousoutput
+application/ics;    vkhal -s %s; copiousoutput
+```
 
-    "\
-<enter-command>unset wait_key<enter>\
+Then add a macro to import events into Khal:
+
+```
+macro attach K \
+"\
+"<enter-command>unset wait_key<enter>\
 <shell-escape>rm -f /tmp/events.ics<enter>\
 <save-entry><kill-line>/tmp/events.ics<enter>\
-<shell-escape> ~/Projects/vkhal/bin/vkhal -k /tmp/events.ics<enter>\
+<shell-escape> vkhal -k /tmp/events.ics<enter>\
 "
+```
 
 ## License
 
