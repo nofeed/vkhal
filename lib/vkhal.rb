@@ -8,6 +8,6 @@ require 'vkhal/khal_service'
 require 'vkhal/presenter'
 
 module Vkhal
-  VERSION = '0.1.0'
+  VERSION = '0.1.1'
   class Error < StandardError; end
 end
