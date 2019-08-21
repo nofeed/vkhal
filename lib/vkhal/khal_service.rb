@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Vkhal
+  # Sends events to Khal
   class KhalService
     def initialize(file:)
       @file = file

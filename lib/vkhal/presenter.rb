@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Vkhal
+  # Wraps presentation logic for Icalendar events
   class Presenter
     def initialize(events:)
       @events = events
@@ -6,13 +9,13 @@ module Vkhal
 
     def display
       @events.each do |event|
-        puts <<~EVTEND
-        Summary:          #{event.summary}
-        Location:         #{event.location}
-        Organizer:        #{event.organizer}
-        Description:      #{event.description}
-        Start:            #{format_datetime(event.dtstart)}
-        End:              #{format_datetime(event.dtend)}
+        puts <<~EVTEND.gsub(/[ ]+\n/, "\n")
+          Summary:          #{event.summary}
+          Location:         #{event.location}
+          Organizer:        #{event.organizer}
+          Description:      #{event.description}
+          Start:            #{format_datetime(event.dtstart)}
+          End:              #{format_datetime(event.dtend)}
 
         EVTEND
       end
@@ -20,8 +23,8 @@ module Vkhal
 
     private
 
-    def format_datetime(dt)
-      dt.strftime("%A, %d %b %Y %l:%M %p")
+    def format_datetime(datetime)
+      datetime.strftime('%A, %d %b %Y %l:%M %p')
     end
   end
 end

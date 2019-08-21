@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 module Vkhal
+  # Handles arguments for the vkhal CLI utility
   class CLI
     def initialize
       @options = options_parse
@@ -20,7 +23,7 @@ module Vkhal
       options = {}
       OptionParser.new do |opts|
         opts.banner = 'Usage: vkhal [options]'
-        opts.on('-s', '--show FILE', String, 'Show ical file FILE') 
+        opts.on('-s', '--show FILE', String, 'Show ical file FILE')
         opts.on('-k', '--khal FILE', String, 'Insert ical FILE into Khal')
       end.parse!(into: options)
       options
