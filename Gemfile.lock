@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    vkhal (0.1.0)
+    vkhal (0.1.1)
       icalendar (~> 2.5)
 
 GEM
