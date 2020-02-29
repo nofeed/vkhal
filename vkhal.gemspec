@@ -32,7 +32,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency             'icalendar'
 
   spec.add_development_dependency 'bundler', '~> 2.0'
-  spec.add_development_dependency 'rake', '~> 10.0'
+  spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.8'
   spec.add_development_dependency 'rubocop', '~> 0.70.0', '>= 0.70'
 end
